@@ -67,7 +67,9 @@ Day 9 学了两件事：
 
 #### 2.3 动量因子的构造
 
-**MOM（Momentum）或 UMD（Up Minus Down）= 过去赢家组合收益 - 过去输家组合收益**
+**MOM（Momentum）或 UMD（Up Minus Down）：**
+
+$$\text{MOM} = \text{过去赢家组合收益} - \text{过去输家组合收益}$$
 
 ```
 第1步：每月末，计算所有股票过去 12 个月的累计收益（跳过最近 1 个月）
@@ -98,9 +100,7 @@ Day 9 学了两件事：
 
 1997 年，Mark Carhart 在 Fama-French 三因子基础上加入动量因子，形成了**四因子模型**：
 
-```
-r_i - r_f = α + β_MKT × MKT + β_SMB × SMB + β_HML × HML + β_MOM × MOM + ε
-```
+$$r_i - r_f = \alpha + \beta_{MKT}\text{MKT} + \beta_{SMB}\text{SMB} + \beta_{HML}\text{HML} + \beta_{MOM}\text{MOM} + \varepsilon$$
 
 | 因子 | 全称 | 做多 | 做空 | 历史年化溢价（美股） |
 |------|------|------|------|:------------------:|
@@ -109,7 +109,7 @@ r_i - r_f = α + β_MKT × MKT + β_SMB × SMB + β_HML × HML + β_MOM × MOM +
 | HML | High Minus Low | 价值股 | 成长股 | +3% 到 +5% |
 | MOM | Momentum | 过去赢家 | 过去输家 | +8% 到 +12% |
 
-> **四因子模型在业界使用非常广泛。** 评估一个基金经理的表现时，通常用四因子模型做回归——如果四个因子都控制了之后 Alpha 仍然为正，说明基金经理确实有"选股能力"，而不是简单地暴露在已知因子上。
+> **四因子模型在业界使用非常广泛。** 评估一个基金经理的表现时，通常用四因子模型做回归——如果四个因子都控制了之后 $\alpha$ 仍然为正，说明基金经理确实有"选股能力"，而不是简单地暴露在已知因子上。
 
 ---
 
@@ -126,12 +126,14 @@ r_i - r_f = α + β_MKT × MKT + β_SMB × SMB + β_HML × HML + β_MOM × MOM +
 
 #### 4.2 RMW：盈利因子
 
-**RMW（Robust Minus Weak）= 高盈利公司收益 - 低盈利公司收益**
+**RMW（Robust Minus Weak）：**
+
+$$\text{RMW} = \text{高盈利公司收益} - \text{低盈利公司收益}$$
 
 | 要素 | 说明 |
 |------|------|
 | 全称 | Robust Minus Weak（稳健减脆弱） |
-| 衡量标准 | 营业利润率（Operating Profitability）= 营业利润 / 账面权益 |
+| 衡量标准 | 营业利润率（Operating Profitability）= $\frac{\text{营业利润}}{\text{账面权益}}$ |
 | 做多 | 盈利能力强的公司（Robust） |
 | 做空 | 盈利能力弱的公司（Weak） |
 | 历史年化溢价（美股） | 约 +3% 到 +4% |
@@ -142,7 +144,9 @@ r_i - r_f = α + β_MKT × MKT + β_SMB × SMB + β_HML × HML + β_MOM × MOM +
 
 #### 4.3 CMA：投资因子
 
-**CMA（Conservative Minus Aggressive）= 保守投资公司收益 - 激进投资公司收益**
+**CMA（Conservative Minus Aggressive）：**
+
+$$\text{CMA} = \text{保守投资公司收益} - \text{激进投资公司收益}$$
 
 | 要素 | 说明 |
 |------|------|
@@ -158,10 +162,7 @@ r_i - r_f = α + β_MKT × MKT + β_SMB × SMB + β_HML × HML + β_MOM × MOM +
 
 #### 4.4 五因子模型公式
 
-```
-r_i - r_f = α + β_MKT × MKT + β_SMB × SMB + β_HML × HML
-              + β_RMW × RMW + β_CMA × CMA + ε
-```
+$$r_i - r_f = \alpha + \beta_{MKT}\text{MKT} + \beta_{SMB}\text{SMB} + \beta_{HML}\text{HML} + \beta_{RMW}\text{RMW} + \beta_{CMA}\text{CMA} + \varepsilon$$
 
 ```mermaid
 graph TD
