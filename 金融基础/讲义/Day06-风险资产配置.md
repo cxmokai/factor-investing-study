@@ -211,22 +211,23 @@ $$U = E(r) - \frac{1}{2} A \sigma^2$$
   <!-- 轴标签 -->
   <text x="450" y="240" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
   <text x="30" y="40" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
-  <!-- IC1（效用较低） -->
-  <path d="M85,210 Q180,140 420,120" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="6,3"/>
-  <text x="425" y="117" font-size="11" fill="#999">IC1（效用较低）</text>
+  <!-- IC1（效用较低）— 开口向上抛物线：σ=0 处水平，越往右越陡 -->
+  <path d="M70,205 C170,205 280,180 360,110" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="365" y="113" font-size="11" fill="#999">IC1</text>
   <!-- IC2 -->
-  <path d="M85,170 Q180,100 420,80" fill="none" stroke="#4a90d9" stroke-width="2.5"/>
-  <text x="425" y="77" font-size="11" font-weight="bold" fill="#4a90d9">IC2</text>
+  <path d="M70,170 C170,170 280,140 360,70" fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <text x="365" y="73" font-size="11" font-weight="bold" fill="#4a90d9">IC2</text>
   <!-- IC2 上的两个等效用点 -->
-  <circle cx="145" cy="147" r="4" fill="#e74c3c"/>
-  <text x="120" y="140" font-size="10" fill="#e74c3c">A</text>
-  <circle cx="340" cy="90" r="4" fill="#e74c3c"/>
-  <text x="346" y="87" font-size="10" fill="#e74c3c">B</text>
+  <circle cx="162" cy="162" r="4" fill="#e74c3c"/>
+  <text x="162" y="152" text-anchor="middle" font-size="10" fill="#e74c3c">A</text>
+  <circle cx="295" cy="115" r="4" fill="#e74c3c"/>
+  <text x="295" y="105" text-anchor="middle" font-size="10" fill="#e74c3c">B</text>
   <!-- IC3（效用更高） -->
-  <path d="M85,125 Q180,58 420,40" fill="none" stroke="#27ae60" stroke-width="2"/>
-  <text x="425" y="37" font-size="11" fill="#27ae60">IC3（效用更高）</text>
-  <!-- 箭头：效用递增方向 -->
-  <text x="100" y="92" font-size="11" fill="#333">↑ 效用递增</text>
+  <path d="M70,130 C170,130 280,95 360,42" fill="none" stroke="#27ae60" stroke-width="2"/>
+  <text x="365" y="45" font-size="11" fill="#27ae60">IC3</text>
+  <!-- 标注 -->
+  <text x="90" y="90" font-size="11" fill="#333">↑ 效用递增</text>
+  <text x="200" y="240" font-size="10" fill="#999">σ=0 处水平，越往右越陡（抛物线）</text>
 </svg>
 
 **每条曲线上所有点的效用值 $U$ 相同。** 比如 IC2 上有两个点：
