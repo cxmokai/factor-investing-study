@@ -1,0 +1,33 @@
+<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="250" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">分散化效果：持股数量与风险</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="35" stroke="#666" stroke-width="1.5"/>
+  <text x="450" y="220" text-anchor="end" font-size="12" fill="#666">持股数量</text>
+  <text x="30" y="35" text-anchor="start" font-size="12" fill="#666">总风险 σ</text>
+  <!-- 系统性风险虚线 -->
+  <line x1="70" y1="178" x2="440" y2="178" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="442" y="175" font-size="10" fill="#e74c3c">系统性风险</text>
+  <text x="442" y="188" font-size="10" fill="#e74c3c">（消不掉）</text>
+  <!-- 衰减曲线（非系统性风险逐渐消除） -->
+  <polyline points="85,55 115,95 150,125 185,145 220,157 260,165 300,170 340,174 380,176 420,177"
+    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- 标注 -->
+  <text x="270" y="150" font-size="10" fill="#4a90d9">← 非系统性风险逐渐被消除</text>
+  <!-- X 轴刻度 -->
+  <line x1="85" y1="200" x2="85" y2="204" stroke="#666"/>
+  <text x="85" y="216" text-anchor="middle" font-size="10" fill="#666">1</text>
+  <line x1="150" y1="200" x2="150" y2="204" stroke="#666"/>
+  <text x="150" y="216" text-anchor="middle" font-size="10" fill="#666">5</text>
+  <line x1="220" y1="200" x2="220" y2="204" stroke="#666"/>
+  <text x="220" y="216" text-anchor="middle" font-size="10" fill="#666">10</text>
+  <line x1="300" y1="200" x2="300" y2="204" stroke="#666"/>
+  <text x="300" y="216" text-anchor="middle" font-size="10" fill="#666">20</text>
+  <line x1="360" y1="200" x2="360" y2="204" stroke="#666"/>
+  <text x="360" y="216" text-anchor="middle" font-size="10" fill="#666">30</text>
+  <line x1="420" y1="200" x2="420" y2="204" stroke="#666"/>
+  <text x="420" y="216" text-anchor="middle" font-size="10" fill="#666">50</text>
+</svg>

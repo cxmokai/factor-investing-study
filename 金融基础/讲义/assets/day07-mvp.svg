@@ -1,0 +1,24 @@
+<svg width="480" height="240" viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="240" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">最小方差组合（MVP）</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
+  <text x="450" y="218" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
+  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
+  <!-- 有效前沿（上弧） -->
+  <path d="M160,130 C148,100 170,62 240,46 C310,30 390,38 420,48"
+    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- 前沿下弧（无效，虚线） -->
+  <path d="M160,130 C170,155 200,172 260,180 C320,185 390,175 420,160"
+    fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- MVP 点（高亮） -->
+  <circle cx="160" cy="130" r="8" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+  <circle cx="160" cy="130" r="3" fill="#e74c3c"/>
+  <!-- MVP 标注 -->
+  <text x="96" y="118" font-size="12" font-weight="bold" fill="#e74c3c">MVP</text>
+  <text x="96" y="134" font-size="10" fill="#666">风险最小的点</text>
+  <text x="96" y="147" font-size="10" fill="#666">但收益不是最高</text>
+</svg>

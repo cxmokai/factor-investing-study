@@ -1,0 +1,26 @@
+<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="250" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">资本配置线（CAL）</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
+  <!-- 轴标签 -->
+  <text x="450" y="220" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
+  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
+  <!-- CAL 直线 -->
+  <line x1="70" y1="159" x2="387" y2="63" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- 点: y=0（全仓国债） -->
+  <circle cx="70" cy="159" r="5" fill="#4a90d9"/>
+  <text x="84" y="150" font-size="11" font-weight="bold" fill="#333">y=0, 全仓国债</text>
+  <text x="84" y="164" font-size="10" fill="#666">E(r)=3%, σ=0%</text>
+  <!-- 点: y=0.6 -->
+  <circle cx="260" cy="101" r="5" fill="#e74c3c"/>
+  <text x="274" y="94" font-size="11" font-weight="bold" fill="#e74c3c">y=0.6</text>
+  <text x="274" y="108" font-size="10" fill="#666">E(r)=7.2%, σ=12%</text>
+  <!-- 点: y=1（全仓股票） -->
+  <circle cx="387" cy="63" r="5" fill="#4a90d9"/>
+  <text x="295" y="50" font-size="11" font-weight="bold" fill="#333">y=1, 全仓股票</text>
+  <text x="295" y="64" font-size="10" fill="#666">E(r)=10%, σ=20%</text>
+</svg>

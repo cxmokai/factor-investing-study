@@ -1,0 +1,24 @@
+<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="250" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">两资产组合弧线（ρ &lt; 1 时左弯）</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
+  <text x="450" y="220" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
+  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
+  <!-- 组合弧线（从 B 经左弯到 A） -->
+  <polyline points="200,160 185,150 178,140 180,130 192,115 220,100 260,85 310,72 370,58"
+    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- B 点（100% B） -->
+  <circle cx="200" cy="160" r="5" fill="#4a90d9"/>
+  <text x="210" y="166" font-size="11" font-weight="bold" fill="#333">B（100% B）</text>
+  <!-- A 点（100% A） -->
+  <circle cx="370" cy="58" r="5" fill="#4a90d9"/>
+  <text x="310" y="50" font-size="11" font-weight="bold" fill="#333">A（100% A）</text>
+  <!-- 弯曲说明 -->
+  <line x1="170" y1="125" x2="178" y2="135" stroke="#e74c3c" stroke-width="1"/>
+  <text x="100" y="118" font-size="10" fill="#e74c3c">ρ &lt; 1 时向左弯曲</text>
+  <text x="100" y="131" font-size="10" fill="#e74c3c">弯曲 = 分散化降低风险</text>
+</svg>

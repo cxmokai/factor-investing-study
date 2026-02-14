@@ -1,0 +1,31 @@
+<svg width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="260" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">有效前沿与最小方差组合（MVP）</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="210" x2="450" y2="210" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="210" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
+  <text x="450" y="230" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
+  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
+  <!-- 可行域填充 -->
+  <path d="M160,135 C148,105 165,60 240,44 C315,28 400,42 420,65
+           C435,82 430,145 410,165 C385,185 280,192 210,180 C170,170 165,155 160,135 Z"
+    fill="#eee" stroke="none"/>
+  <!-- 有效前沿（上弧，粗蓝实线） -->
+  <path d="M160,135 C148,105 165,60 240,44 C315,28 400,42 420,65"
+    fill="none" stroke="#4a90d9" stroke-width="3"/>
+  <!-- 无效区域（下弧，灰色虚线） -->
+  <path d="M160,135 C165,155 170,170 210,180 C280,192 385,185 410,165 C430,145 435,82 420,65"
+    fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- MVP 点 -->
+  <circle cx="160" cy="135" r="6" fill="#e74c3c"/>
+  <text x="100" y="128" font-size="11" font-weight="bold" fill="#e74c3c">MVP</text>
+  <text x="100" y="142" font-size="10" fill="#e74c3c">（风险最小）</text>
+  <!-- 有效前沿标注 -->
+  <text x="300" y="38" font-size="11" font-weight="bold" fill="#4a90d9">← 有效前沿（值得选）</text>
+  <!-- 无效区域标注 -->
+  <text x="340" y="195" font-size="10" fill="#999">↑ 无效区域（同等风险收益更低）</text>
+  <!-- 前沿以下的点标注 -->
+  <text x="300" y="130" font-size="10" fill="#666">前沿以下的点都不如前沿上的</text>
+</svg>

@@ -215,39 +215,7 @@ graph TD
 
 随着你持有的股票数量增加，组合的总风险逐渐降低：
 
-<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景 -->
-  <rect width="480" height="250" fill="#fafafa" rx="8"/>
-  <!-- 标题 -->
-  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">分散化效果：持股数量与风险</text>
-  <!-- 坐标轴 -->
-  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
-  <line x1="70" y1="200" x2="70" y2="35" stroke="#666" stroke-width="1.5"/>
-  <text x="450" y="220" text-anchor="end" font-size="12" fill="#666">持股数量</text>
-  <text x="30" y="35" text-anchor="start" font-size="12" fill="#666">总风险 σ</text>
-  <!-- 系统性风险虚线 -->
-  <line x1="70" y1="178" x2="440" y2="178" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="6,3"/>
-  <text x="442" y="175" font-size="10" fill="#e74c3c">系统性风险</text>
-  <text x="442" y="188" font-size="10" fill="#e74c3c">（消不掉）</text>
-  <!-- 衰减曲线（非系统性风险逐渐消除） -->
-  <polyline points="85,55 115,95 150,125 185,145 220,157 260,165 300,170 340,174 380,176 420,177"
-    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
-  <!-- 标注 -->
-  <text x="270" y="150" font-size="10" fill="#4a90d9">← 非系统性风险逐渐被消除</text>
-  <!-- X 轴刻度 -->
-  <line x1="85" y1="200" x2="85" y2="204" stroke="#666"/>
-  <text x="85" y="216" text-anchor="middle" font-size="10" fill="#666">1</text>
-  <line x1="150" y1="200" x2="150" y2="204" stroke="#666"/>
-  <text x="150" y="216" text-anchor="middle" font-size="10" fill="#666">5</text>
-  <line x1="220" y1="200" x2="220" y2="204" stroke="#666"/>
-  <text x="220" y="216" text-anchor="middle" font-size="10" fill="#666">10</text>
-  <line x1="300" y1="200" x2="300" y2="204" stroke="#666"/>
-  <text x="300" y="216" text-anchor="middle" font-size="10" fill="#666">20</text>
-  <line x1="360" y1="200" x2="360" y2="204" stroke="#666"/>
-  <text x="360" y="216" text-anchor="middle" font-size="10" fill="#666">30</text>
-  <line x1="420" y1="200" x2="420" y2="204" stroke="#666"/>
-  <text x="420" y="216" text-anchor="middle" font-size="10" fill="#666">50</text>
-</svg>
+![分散化效果：持股数量与风险](assets/day07-diversification.svg)
 
 | 持股数量  | 大约能消除的非系统性风险 |
 | :-------: | :----------------------: |
@@ -300,30 +268,7 @@ graph TD
 
 先回到两个资产的情况。改变 $w_A$ 和 $w_B$ 的比例（从 0% 到 100%），可以画出所有可能的组合：
 
-<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景 -->
-  <rect width="480" height="250" fill="#fafafa" rx="8"/>
-  <!-- 标题 -->
-  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">两资产组合弧线（ρ &lt; 1 时左弯）</text>
-  <!-- 坐标轴 -->
-  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
-  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
-  <text x="450" y="220" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
-  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
-  <!-- 组合弧线（从 B 经左弯到 A） -->
-  <polyline points="200,160 185,150 178,140 180,130 192,115 220,100 260,85 310,72 370,58"
-    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
-  <!-- B 点（100% B） -->
-  <circle cx="200" cy="160" r="5" fill="#4a90d9"/>
-  <text x="210" y="166" font-size="11" font-weight="bold" fill="#333">B（100% B）</text>
-  <!-- A 点（100% A） -->
-  <circle cx="370" cy="58" r="5" fill="#4a90d9"/>
-  <text x="310" y="50" font-size="11" font-weight="bold" fill="#333">A（100% A）</text>
-  <!-- 弯曲说明 -->
-  <line x1="170" y1="125" x2="178" y2="135" stroke="#e74c3c" stroke-width="1"/>
-  <text x="100" y="118" font-size="10" fill="#e74c3c">ρ &lt; 1 时向左弯曲</text>
-  <text x="100" y="131" font-size="10" fill="#e74c3c">弯曲 = 分散化降低风险</text>
-</svg>
+![两资产组合弧线](assets/day07-two-asset-arc.svg)
 
 - 当 $\rho = +1$ 时：所有组合在一条直线上（A 到 B 的连线）
 - 当 $\rho < +1$ 时：线向左弯曲——**弯曲的部分就是分散化带来的风险降低**
@@ -335,39 +280,7 @@ graph TD
 
 当资产数量增加到 N 个，所有可能的组合不再是一条线，而是一个**区域**——在风险-收益图上形成一大片"可行域"：
 
-<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景 -->
-  <rect width="480" height="250" fill="#fafafa" rx="8"/>
-  <!-- 标题 -->
-  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">N 资产可行域</text>
-  <!-- 坐标轴 -->
-  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
-  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
-  <text x="450" y="220" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
-  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
-  <!-- 可行域（子弹形区域） -->
-  <path d="M160,130 C148,100 165,60 240,44 C315,28 390,38 415,60
-           C435,78 430,135 410,155 C385,175 280,182 210,170 C170,160 165,148 160,130 Z"
-    fill="#4a90d9" fill-opacity="0.12" stroke="#4a90d9" stroke-width="2"/>
-  <!-- 散点表示各种可能的组合 -->
-  <circle cx="210" cy="100" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="260" cy="120" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="310" cy="85" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="230" cy="140" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="350" cy="105" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="190" cy="125" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="280" cy="70" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="330" cy="140" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="390" cy="95" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="250" cy="155" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="300" cy="150" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="360" cy="65" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="175" cy="140" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <circle cx="380" cy="135" r="2.5" fill="#4a90d9" opacity="0.4"/>
-  <!-- 标注 -->
-  <text x="290" y="120" text-anchor="middle" font-size="11" fill="#666">所有可能的组合</text>
-  <text x="290" y="134" text-anchor="middle" font-size="11" fill="#666">填满了这个区域</text>
-</svg>
+![N 资产可行域](assets/day07-feasible-region.svg)
 
 这个区域里有无数种组合——但其中大部分都不是最优的。
 
@@ -381,37 +294,7 @@ graph TD
 
 换句话说：有效前沿是可行域的**左上边界**——不可能再往左（更低风险）或往上（更高收益）了。
 
-<svg width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景 -->
-  <rect width="480" height="260" fill="#fafafa" rx="8"/>
-  <!-- 标题 -->
-  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">有效前沿与最小方差组合（MVP）</text>
-  <!-- 坐标轴 -->
-  <line x1="70" y1="210" x2="450" y2="210" stroke="#666" stroke-width="1.5"/>
-  <line x1="70" y1="210" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
-  <text x="450" y="230" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
-  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
-  <!-- 可行域填充 -->
-  <path d="M160,135 C148,105 165,60 240,44 C315,28 400,42 420,65
-           C435,82 430,145 410,165 C385,185 280,192 210,180 C170,170 165,155 160,135 Z"
-    fill="#eee" stroke="none"/>
-  <!-- 有效前沿（上弧，粗蓝实线） -->
-  <path d="M160,135 C148,105 165,60 240,44 C315,28 400,42 420,65"
-    fill="none" stroke="#4a90d9" stroke-width="3"/>
-  <!-- 无效区域（下弧，灰色虚线） -->
-  <path d="M160,135 C165,155 170,170 210,180 C280,192 385,185 410,165 C430,145 435,82 420,65"
-    fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <!-- MVP 点 -->
-  <circle cx="160" cy="135" r="6" fill="#e74c3c"/>
-  <text x="100" y="128" font-size="11" font-weight="bold" fill="#e74c3c">MVP</text>
-  <text x="100" y="142" font-size="10" fill="#e74c3c">（风险最小）</text>
-  <!-- 有效前沿标注 -->
-  <text x="300" y="38" font-size="11" font-weight="bold" fill="#4a90d9">← 有效前沿（值得选）</text>
-  <!-- 无效区域标注 -->
-  <text x="340" y="195" font-size="10" fill="#999">↑ 无效区域（同等风险收益更低）</text>
-  <!-- 前沿以下的点标注 -->
-  <text x="300" y="130" font-size="10" fill="#666">前沿以下的点都不如前沿上的</text>
-</svg>
+![有效前沿与最小方差组合](assets/day07-efficient-frontier.svg)
 
 #### 6.2 为什么有效前沿是这个形状
 
@@ -436,30 +319,7 @@ graph TD
 
 有效前沿的最左端有一个特殊的点——**最小方差组合（Minimum Variance Portfolio, MVP）**：风险最小的组合。
 
-<svg width="480" height="240" viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景 -->
-  <rect width="480" height="240" fill="#fafafa" rx="8"/>
-  <!-- 标题 -->
-  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">最小方差组合（MVP）</text>
-  <!-- 坐标轴 -->
-  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
-  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
-  <text x="450" y="218" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
-  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
-  <!-- 有效前沿（上弧） -->
-  <path d="M160,130 C148,100 170,62 240,46 C310,30 390,38 420,48"
-    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
-  <!-- 前沿下弧（无效，虚线） -->
-  <path d="M160,130 C170,155 200,172 260,180 C320,185 390,175 420,160"
-    fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <!-- MVP 点（高亮） -->
-  <circle cx="160" cy="130" r="8" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
-  <circle cx="160" cy="130" r="3" fill="#e74c3c"/>
-  <!-- MVP 标注 -->
-  <text x="96" y="118" font-size="12" font-weight="bold" fill="#e74c3c">MVP</text>
-  <text x="96" y="134" font-size="10" fill="#666">风险最小的点</text>
-  <text x="96" y="147" font-size="10" fill="#666">但收益不是最高</text>
-</svg>
+![最小方差组合（MVP）](assets/day07-mvp.svg)
 
 > MVP 以下的弧线部分（前沿的下半段）是"无效的"——和 MVP 以上的对应点相比，风险相同但收益更低。所以有效前沿只取 MVP 以上的部分。
 
@@ -475,35 +335,7 @@ Day 6 学了资本配置线（CAL）——从无风险利率出发，连到一�
 
 答案：**选那个让 CAL 斜率最大（夏普比率最高）的组合。**
 
-<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景 -->
-  <rect width="480" height="250" fill="#fafafa" rx="8"/>
-  <!-- 标题 -->
-  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">切线组合 T 与资本配置线（CAL）</text>
-  <!-- 坐标轴 -->
-  <line x1="70" y1="210" x2="450" y2="210" stroke="#666" stroke-width="1.5"/>
-  <line x1="70" y1="210" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
-  <text x="450" y="230" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
-  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
-  <!-- 有效前沿 -->
-  <path d="M165,148 C155,120 178,80 235,65 C290,50 360,44 410,42"
-    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
-  <!-- 前沿下弧（虚线） -->
-  <path d="M165,148 C175,172 215,190 275,195 C340,197 390,185 410,170"
-    fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <!-- CAL 线（从 R_f 经过 T 延伸） -->
-  <line x1="70" y1="188" x2="315" y2="38" stroke="#e74c3c" stroke-width="2"/>
-  <text x="318" y="34" font-size="11" font-weight="bold" fill="#e74c3c">CAL</text>
-  <!-- R_f 点 -->
-  <circle cx="70" cy="188" r="4" fill="#e74c3c"/>
-  <text x="82" y="198" font-size="11" fill="#e74c3c">R_f</text>
-  <!-- T 切点 -->
-  <circle cx="235" cy="65" r="6" fill="#e74c3c"/>
-  <text x="245" y="58" font-size="11" font-weight="bold" fill="#e74c3c">T（最优风险组合）</text>
-  <!-- MVP 点 -->
-  <circle cx="165" cy="148" r="4" fill="#4a90d9"/>
-  <text x="120" y="155" font-size="10" fill="#4a90d9">MVP</text>
-</svg>
+![切线组合 T 与资本配置线](assets/day07-tangency-portfolio.svg)
 
 从无风险利率 $R_f$ 画一条线，和有效前沿**相切**——切点 T 就是**最优风险组合（Optimal Risky Portfolio）**，也叫**切线组合（Tangency Portfolio）**。
 
@@ -523,34 +355,7 @@ Day 6 学了资本配置线（CAL）——从无风险利率出发，连到一�
 
 **资本市场线（Capital Market Line, CML）= 从无风险利率到市场组合的 CAL。**
 
-<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
-  <!-- 背景 -->
-  <rect width="480" height="250" fill="#fafafa" rx="8"/>
-  <!-- 标题 -->
-  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">资本市场线（CML）</text>
-  <!-- 坐标轴 -->
-  <line x1="70" y1="210" x2="450" y2="210" stroke="#666" stroke-width="1.5"/>
-  <line x1="70" y1="210" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
-  <text x="450" y="230" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
-  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
-  <!-- 有效前沿 -->
-  <path d="M165,148 C155,120 178,80 235,65 C290,50 360,44 410,42"
-    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
-  <!-- 前沿下弧（虚线） -->
-  <path d="M165,148 C175,172 215,190 275,195 C340,197 390,185 410,170"
-    fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
-  <!-- CML（从 R_f 经过 M 延伸） -->
-  <line x1="70" y1="188" x2="315" y2="38" stroke="#e74c3c" stroke-width="2"/>
-  <text x="318" y="34" font-size="11" font-weight="bold" fill="#e74c3c">CML</text>
-  <!-- R_f 点 -->
-  <circle cx="70" cy="188" r="4" fill="#e74c3c"/>
-  <text x="82" y="198" font-size="11" fill="#e74c3c">R_f</text>
-  <!-- M 市场组合 -->
-  <circle cx="235" cy="65" r="6" fill="#e74c3c"/>
-  <text x="245" y="58" font-size="11" font-weight="bold" fill="#e74c3c">M（市场组合）</text>
-  <!-- MVP 点 -->
-  <circle cx="165" cy="148" r="4" fill="#4a90d9"/>
-</svg>
+![资本市场线（CML）](assets/day07-cml.svg)
 
 > **"市场组合"在理论上包含世界上所有的可交易资产——所有股票、所有债券、所有房产等。** 实际中用市场指数（如沪深 300、标普 500）近似。这是一个理论概念，Day 8 的 CAPM 模型会详细讲。
 

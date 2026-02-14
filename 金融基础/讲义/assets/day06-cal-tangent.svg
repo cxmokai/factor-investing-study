@@ -1,0 +1,33 @@
+<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="250" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">无差异曲线与 CAL 的切点</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
+  <!-- 轴标签 -->
+  <text x="450" y="220" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
+  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
+  <!-- CAL 直线 -->
+  <line x1="70" y1="165" x2="420" y2="78" stroke="#4a90d9" stroke-width="2.5"/>
+  <text x="425" y="74" font-size="11" font-weight="bold" fill="#4a90d9">CAL</text>
+  <!-- IC1（效用较低） -->
+  <polyline points="70,171 105,170 139,167 173,162 208,156 243,147 277,137 312,124 346,110"
+    fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="352" y="114" font-size="11" fill="#999">IC1</text>
+  <!-- IC2（与 CAL 相切，最优） -->
+  <polyline points="70,147 105,146 139,143 173,138 208,132 221,129 243,123 277,113 312,100 346,86"
+    fill="none" stroke="#e74c3c" stroke-width="2"/>
+  <text x="352" y="90" font-size="11" font-weight="bold" fill="#e74c3c">IC2</text>
+  <!-- IC3（效用更高但不可达） -->
+  <polyline points="70,123 105,122 139,120 173,115 208,108 243,100 277,89 312,77 346,63"
+    fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="352" y="66" font-size="11" fill="#999">IC3</text>
+  <!-- 切点标注 -->
+  <circle cx="221" cy="129" r="6" fill="#e74c3c"/>
+  <text x="232" y="122" font-size="11" font-weight="bold" fill="#e74c3c">← 切点（最优配置）</text>
+  <!-- R_f 起点 -->
+  <circle cx="70" cy="165" r="4" fill="#4a90d9"/>
+  <text x="84" y="176" font-size="11" fill="#4a90d9">R_f</text>
+</svg>
