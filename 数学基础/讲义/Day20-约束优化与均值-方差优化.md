@@ -75,18 +75,41 @@ f(x) = x² - 4x + 5
   确实在 x = 2 时最小。
 ```
 
-```
-函数图形：
-
-  f(x)
-  5 |*               *
-    |  \           /
-  3 |    \       /
-    |      \   /
-  1 |        *  ← 最小值在 x = 2
-    +--+--+--+--+--→ x
-       0  1  2  3  4
-```
+<svg width="480" height="240" viewBox="0 0 480 240" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="240" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">f(x) = x² − 4x + 5 的最小值</text>
+  <!-- 坐标轴 -->
+  <line x1="80" y1="200" x2="400" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="80" y1="200" x2="80" y2="40" stroke="#666" stroke-width="1.5"/>
+  <text x="400" y="218" text-anchor="end" font-size="12" fill="#666">x</text>
+  <text x="45" y="42" font-size="12" fill="#666">f(x)</text>
+  <!-- 抛物线 -->
+  <polyline points="80,64 116,111 151,146 187,166 222,173 258,166 293,146 329,111 364,64"
+    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- 最小值点 x=2, f(2)=1 -->
+  <circle cx="222" cy="173" r="6" fill="#e74c3c"/>
+  <text x="235" y="168" font-size="11" font-weight="bold" fill="#e74c3c">← 最小值 f(2) = 1</text>
+  <!-- X 轴刻度 -->
+  <line x1="80" y1="200" x2="80" y2="204" stroke="#666"/>
+  <text x="80" y="216" text-anchor="middle" font-size="10" fill="#666">0</text>
+  <line x1="151" y1="200" x2="151" y2="204" stroke="#666"/>
+  <text x="151" y="216" text-anchor="middle" font-size="10" fill="#666">1</text>
+  <line x1="222" y1="200" x2="222" y2="204" stroke="#666"/>
+  <text x="222" y="216" text-anchor="middle" font-size="10" fill="#666">2</text>
+  <line x1="293" y1="200" x2="293" y2="204" stroke="#666"/>
+  <text x="293" y="216" text-anchor="middle" font-size="10" fill="#666">3</text>
+  <line x1="364" y1="200" x2="364" y2="204" stroke="#666"/>
+  <text x="364" y="216" text-anchor="middle" font-size="10" fill="#666">4</text>
+  <!-- Y 轴刻度 -->
+  <line x1="76" y1="64" x2="80" y2="64" stroke="#666"/>
+  <text x="72" y="68" text-anchor="end" font-size="10" fill="#666">5</text>
+  <line x1="76" y1="146" x2="80" y2="146" stroke="#666"/>
+  <text x="72" y="150" text-anchor="end" font-size="10" fill="#666">2</text>
+  <line x1="76" y1="173" x2="80" y2="173" stroke="#666"/>
+  <text x="72" y="177" text-anchor="end" font-size="10" fill="#666">1</text>
+</svg>
 
 #### 2.3 和因子投资的联系
 
@@ -108,16 +131,36 @@ $$\min_{\boldsymbol{w}} \sigma_p^2(\boldsymbol{w})$$
 
 **凸函数 = "碗形"函数：任意两点之间的连线都在函数图形的上方。**
 
-```
-凸函数（碗形）：                  非凸函数：
-
-  f(x)                            f(x)
-  |  \    /                       |  \  /\  /
-  |   \  /                        |   \/  \/
-  |    \/  ← 唯一谷底              |  多个谷底
-  +------→ x                      +------→ x
-  任何谷底都是全局最优              可能掉进"错误的谷"
-```
+<svg width="480" height="210" viewBox="0 0 480 210" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="210" fill="#fafafa" rx="8"/>
+  <text x="240" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">凸函数 vs 非凸函数</text>
+  <!-- 左面板：凸函数 -->
+  <text x="120" y="40" text-anchor="middle" font-size="12" font-weight="bold" fill="#4a90d9">凸函数（碗形）</text>
+  <line x1="30" y1="160" x2="210" y2="160" stroke="#666" stroke-width="1"/>
+  <line x1="30" y1="160" x2="30" y2="45" stroke="#666" stroke-width="1"/>
+  <text x="30" y="42" font-size="10" fill="#666">f(x)</text>
+  <text x="212" y="172" font-size="10" fill="#666">x</text>
+  <!-- 碗形曲线 -->
+  <polyline points="40,60 60,85 80,105 100,118 120,125 140,118 160,105 180,85 200,60"
+    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <circle cx="120" cy="125" r="5" fill="#e74c3c"/>
+  <text x="130" y="140" font-size="10" fill="#e74c3c">唯一谷底</text>
+  <text x="120" y="180" text-anchor="middle" font-size="10" fill="#666">任何谷底都是全局最优</text>
+  <!-- 右面板：非凸函数 -->
+  <text x="360" y="40" text-anchor="middle" font-size="12" font-weight="bold" fill="#e74c3c">非凸函数</text>
+  <line x1="270" y1="160" x2="450" y2="160" stroke="#666" stroke-width="1"/>
+  <line x1="270" y1="160" x2="270" y2="45" stroke="#666" stroke-width="1"/>
+  <text x="270" y="42" font-size="10" fill="#666">f(x)</text>
+  <text x="452" y="172" font-size="10" fill="#666">x</text>
+  <!-- 多谷曲线 -->
+  <polyline points="280,65 295,90 310,110 325,125 340,105 355,80 370,105 385,120 400,130 415,110 430,80 440,60"
+    fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+  <circle cx="325" cy="125" r="4" fill="#999"/>
+  <circle cx="400" cy="130" r="4" fill="#999"/>
+  <text x="360" y="150" text-anchor="middle" font-size="10" fill="#999">多个谷底</text>
+  <text x="360" y="180" text-anchor="middle" font-size="10" fill="#666">可能掉进"错误的谷"</text>
+</svg>
 
 #### 3.2 为什么凸性很重要
 
@@ -397,19 +440,49 @@ $$\sigma_{MVP} = 9.69\% < \sigma_B = 10\%$$
 
 这就是**分散投资**的数学本质——只要 $\rho < 1$（相关性不完美），混合两个资产的风险就可以低于任何单一资产的风险。
 
-```
-分散投资的效果：
-
-  σ (%)
-  20 |*（100% A）
-     |
-  15 |
-     |
-  10 |*（100% B）   9.69|  * ← MVP（12.5% A + 87.5% B）
-     |         比 100% B 的风险更低！
-   0 +---+---+---+---+---→ w_A (%)
-      0  12.5 25  50  75  100
-```
+<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="250" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">分散投资效果：w_A vs σ</text>
+  <!-- 坐标轴 -->
+  <line x1="80" y1="200" x2="440" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="80" y1="200" x2="80" y2="40" stroke="#666" stroke-width="1.5"/>
+  <text x="440" y="220" text-anchor="end" font-size="12" fill="#666">w_A (%)</text>
+  <text x="40" y="42" font-size="12" fill="#666">σ (%)</text>
+  <!-- 曲线 σ_p = sqrt(0.04w² − 0.01w + 0.01) -->
+  <polyline points="80,179 100,181 123,182 145,181 165,179 188,173 208,167 230,161 250,155 272,146 293,136 315,126 335,116 358,105 378,95 400,83 420,71"
+    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- 100% A 点 -->
+  <circle cx="420" cy="71" r="5" fill="#4a90d9"/>
+  <text x="395" y="60" font-size="10" fill="#333" font-weight="bold">100% A</text>
+  <text x="395" y="48" font-size="10" fill="#666">σ = 20%</text>
+  <!-- 100% B 点 -->
+  <circle cx="80" cy="179" r="5" fill="#4a90d9"/>
+  <text x="90" y="172" font-size="10" fill="#333" font-weight="bold">100% B</text>
+  <text x="90" y="186" font-size="10" fill="#666">σ = 10%</text>
+  <!-- MVP 点 -->
+  <circle cx="123" cy="182" r="6" fill="#e74c3c"/>
+  <text x="138" y="198" font-size="11" font-weight="bold" fill="#e74c3c">MVP（σ = 9.69%）</text>
+  <text x="138" y="212" font-size="10" fill="#e74c3c">比 100% B 更低！</text>
+  <!-- X 轴刻度 -->
+  <line x1="80" y1="200" x2="80" y2="204" stroke="#666"/>
+  <text x="80" y="216" text-anchor="middle" font-size="9" fill="#666">0</text>
+  <line x1="123" y1="200" x2="123" y2="204" stroke="#e74c3c"/>
+  <text x="123" y="228" text-anchor="middle" font-size="9" fill="#e74c3c">12.5</text>
+  <line x1="165" y1="200" x2="165" y2="204" stroke="#666"/>
+  <text x="165" y="216" text-anchor="middle" font-size="9" fill="#666">25</text>
+  <line x1="250" y1="200" x2="250" y2="204" stroke="#666"/>
+  <text x="250" y="216" text-anchor="middle" font-size="9" fill="#666">50</text>
+  <line x1="335" y1="200" x2="335" y2="204" stroke="#666"/>
+  <text x="335" y="216" text-anchor="middle" font-size="9" fill="#666">75</text>
+  <line x1="420" y1="200" x2="420" y2="204" stroke="#666"/>
+  <text x="420" y="216" text-anchor="middle" font-size="9" fill="#666">100</text>
+  <!-- Y 轴刻度 -->
+  <text x="72" y="75" text-anchor="end" font-size="10" fill="#666">20</text>
+  <text x="72" y="148" text-anchor="end" font-size="10" fill="#666">12</text>
+  <text x="72" y="183" text-anchor="end" font-size="10" fill="#666">10</text>
+</svg>
 
 Day 7 讲过"分散投资能降低风险"。**现在你从数学上证明了这一点。**
 
@@ -467,27 +540,54 @@ $$w_A = \frac{\mu^* - 4\%}{10\% - 4\%} = \frac{\mu^* - 4\%}{6\%}$$
 
 #### 7.3 画出有效前沿
 
-```
-  μ (期望收益)
-  |
- 10%|                              * 全部 A
-    |                           ·
-    |                        ·
-  8%|                     ·
-    |                  ·
-  7%|              *  ← 等权（50/50）        有效前沿
-    |           ·                            （上半弧）
-  6%|        ·
-    |     ·
-5.5%|   *   ← 同风险(10%)但更高收益
-    |   |
-4.75%|  * ← MVP（风险最低点）
-    |   \
-  4%|    * 全部 B                             无效部分
-    |                                        （下半弧）
-    +--+--+---+---+---+---+---→ σ (风险)
-       8  10  12  14  16  18  20 (%)
-```
+<svg width="480" height="280" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="280" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">有效前沿</text>
+  <!-- 坐标轴 -->
+  <line x1="80" y1="210" x2="430" y2="210" stroke="#666" stroke-width="1.5"/>
+  <line x1="80" y1="210" x2="80" y2="35" stroke="#666" stroke-width="1.5"/>
+  <text x="430" y="230" text-anchor="end" font-size="12" fill="#666">σ（风险 %）</text>
+  <text x="30" y="38" text-anchor="start" font-size="12" fill="#666">μ（收益）</text>
+  <!-- 有效前沿（上弧，从 MVP 到全部 A） -->
+  <polyline points="122,173 130,157 153,141 186,125 228,109 275,93 327,77 380,61"
+    fill="none" stroke="#4a90d9" stroke-width="3"/>
+  <!-- 无效部分（下弧，从 MVP 到全部 B） -->
+  <polyline points="122,173 123,179 125,183 128,186 130,189"
+    fill="none" stroke="#999" stroke-width="2" stroke-dasharray="4,3"/>
+  <!-- 同风险竖线 -->
+  <line x1="130" y1="160" x2="130" y2="186" stroke="#999" stroke-width="1" stroke-dasharray="2,2"/>
+  <!-- 全部 A -->
+  <circle cx="380" cy="61" r="5" fill="#4a90d9"/>
+  <text x="388" y="56" font-size="10" fill="#333" font-weight="bold">全部 A</text>
+  <text x="388" y="70" font-size="9" fill="#666">σ=20%, μ=10%</text>
+  <!-- 全部 B -->
+  <circle cx="130" cy="189" r="4" fill="#999"/>
+  <text x="140" y="198" font-size="10" fill="#999">全部 B（σ=10%, μ=4%）</text>
+  <!-- MVP -->
+  <circle cx="122" cy="173" r="6" fill="#e74c3c"/>
+  <text x="68" y="165" font-size="10" fill="#e74c3c" font-weight="bold">MVP</text>
+  <text x="68" y="178" font-size="9" fill="#e74c3c">σ=9.69%</text>
+  <text x="68" y="191" font-size="9" fill="#e74c3c">μ=4.75%</text>
+  <!-- 等权 -->
+  <circle cx="186" cy="125" r="4" fill="#4a90d9"/>
+  <text x="196" y="120" font-size="10" fill="#333">等权（50/50）</text>
+  <!-- 同风险点 -->
+  <circle cx="130" cy="157" r="4" fill="#4a90d9"/>
+  <text x="142" y="152" font-size="9" fill="#4a90d9">同风险但更高收益</text>
+  <!-- 有效/无效标注 -->
+  <text x="310" y="50" font-size="11" fill="#4a90d9" font-weight="bold">← 有效前沿（上半弧）</text>
+  <text x="165" y="215" font-size="10" fill="#999">↑ 无效部分</text>
+  <!-- X 轴刻度 -->
+  <text x="80" y="245" text-anchor="middle" font-size="9" fill="#666">8</text>
+  <text x="130" y="245" text-anchor="middle" font-size="9" fill="#666">10</text>
+  <text x="180" y="245" text-anchor="middle" font-size="9" fill="#666">12</text>
+  <text x="230" y="245" text-anchor="middle" font-size="9" fill="#666">14</text>
+  <text x="280" y="245" text-anchor="middle" font-size="9" fill="#666">16</text>
+  <text x="330" y="245" text-anchor="middle" font-size="9" fill="#666">18</text>
+  <text x="380" y="245" text-anchor="middle" font-size="9" fill="#666">20</text>
+</svg>
 
 #### 7.4 有效前沿的三个关键观察
 

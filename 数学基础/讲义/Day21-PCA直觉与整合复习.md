@@ -334,25 +334,51 @@ Scree plot = 把特征值从大到小画出来，找"陡变到平坦"的转折�
 
 假设 10 只股票的协方差矩阵有以下特征值：
 
-```
-  λ     Scree Plot（特征值 vs 主成分编号）
-  │
-  25│  *
-    │
-  20│
-    │
-  15│
-    │     *
-  10│
-    │
-   5│        *    *
-    │                 *    *    *    *    *    *
-   0├──┬──┬──┬──┬──┬──┬──┬──┬──┬──→ 主成分编号
-      1  2  3  4  5  6  7  8  9  10
-
-      ↑ 在这里出现"肘部"——前 3 个下降快，后面趋于平坦
-        → 保留 3 个主成分
-```
+<svg width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="260" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Scree Plot（特征值 vs 主成分编号）</text>
+  <!-- 坐标轴 -->
+  <line x1="80" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="80" y1="200" x2="80" y2="35" stroke="#666" stroke-width="1.5"/>
+  <text x="450" y="218" text-anchor="end" font-size="12" fill="#666">主成分编号</text>
+  <text x="40" y="38" font-size="12" fill="#666">λ</text>
+  <!-- 折线 -->
+  <polyline points="80,57 119,131 158,171 197,177 236,183 274,186 313,189 352,191 391,194 430,197"
+    fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- 数据点（前3个高亮蓝色，后7个灰色） -->
+  <circle cx="80" cy="57" r="5" fill="#4a90d9"/>
+  <circle cx="119" cy="131" r="5" fill="#4a90d9"/>
+  <circle cx="158" cy="171" r="5" fill="#4a90d9"/>
+  <circle cx="197" cy="177" r="4" fill="#999"/>
+  <circle cx="236" cy="183" r="4" fill="#999"/>
+  <circle cx="274" cy="186" r="4" fill="#999"/>
+  <circle cx="313" cy="189" r="4" fill="#999"/>
+  <circle cx="352" cy="191" r="4" fill="#999"/>
+  <circle cx="391" cy="194" r="4" fill="#999"/>
+  <circle cx="430" cy="197" r="4" fill="#999"/>
+  <!-- 肘部标注 -->
+  <line x1="158" y1="175" x2="158" y2="208" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="158" y="225" text-anchor="middle" font-size="10" font-weight="bold" fill="#e74c3c">↑ 肘部</text>
+  <text x="260" y="245" text-anchor="middle" font-size="10" fill="#e74c3c">前 3 个下降快，后面趋于平坦 → 保留 3 个主成分</text>
+  <!-- X 轴刻度 -->
+  <text x="80" y="214" text-anchor="middle" font-size="9" fill="#666">1</text>
+  <text x="119" y="214" text-anchor="middle" font-size="9" fill="#666">2</text>
+  <text x="158" y="214" text-anchor="middle" font-size="9" fill="#666">3</text>
+  <text x="197" y="214" text-anchor="middle" font-size="9" fill="#666">4</text>
+  <text x="236" y="214" text-anchor="middle" font-size="9" fill="#666">5</text>
+  <text x="274" y="214" text-anchor="middle" font-size="9" fill="#666">6</text>
+  <text x="313" y="214" text-anchor="middle" font-size="9" fill="#666">7</text>
+  <text x="352" y="214" text-anchor="middle" font-size="9" fill="#666">8</text>
+  <text x="391" y="214" text-anchor="middle" font-size="9" fill="#666">9</text>
+  <text x="430" y="214" text-anchor="middle" font-size="9" fill="#666">10</text>
+  <!-- Y 轴刻度 -->
+  <text x="72" y="61" text-anchor="end" font-size="10" fill="#666">25</text>
+  <text x="72" y="103" text-anchor="end" font-size="10" fill="#666">15</text>
+  <text x="72" y="145" text-anchor="end" font-size="10" fill="#666">8</text>
+  <text x="72" y="175" text-anchor="end" font-size="10" fill="#666">5</text>
+</svg>
 
 #### 4.3 经验法则
 

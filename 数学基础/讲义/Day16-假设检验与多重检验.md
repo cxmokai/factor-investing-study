@@ -105,23 +105,42 @@ p = 0.03 的正确含义是：**如果因子真的无效（$H_0$ 为真），看
 
 **p 值的可视化（正态分布曲线）：**
 
-```
-              p 值 = 两个阴影区域的面积之和
-
-                        ┌─*─┐
-                       ╱     ╲
-                     ╱         ╲
-                   ╱             ╲
-                 ╱                 ╲
-               ╱                     ╲
-         ░░░╱                         ╲░░░
-     ──┼─────────┼───────────────┼─────────┼──
-      -t         0               +t
-      ↑                          ↑
-   左尾面积                    右尾面积
-
-  p 值 = 左尾面积 + 右尾面积（双侧检验）
-```
+<svg width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="260" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">p 值的可视化（双侧检验）</text>
+  <!-- X 轴 -->
+  <line x1="40" y1="195" x2="440" y2="195" stroke="#666" stroke-width="1.5"/>
+  <!-- 钟形曲线 -->
+  <path d="M40,195 C60,194 80,193 100,190 C120,185 140,175 160,160
+           C180,140 195,110 210,80 C220,60 228,47 240,43
+           C252,47 260,60 270,80 C285,110 300,140 320,160
+           C340,175 360,185 380,190 C400,193 420,194 440,195"
+        fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- 左尾阴影区域 -->
+  <path d="M40,195 C60,194 80,193 100,190 C105,189 108,188 110,187
+           L110,195 Z"
+        fill="#e74c3c" fill-opacity="0.35" stroke="#e74c3c" stroke-width="1"/>
+  <!-- 右尾阴影区域 -->
+  <path d="M370,187 C372,188 375,189 380,190 C400,193 420,194 440,195
+           L370,195 Z"
+        fill="#e74c3c" fill-opacity="0.35" stroke="#e74c3c" stroke-width="1"/>
+  <!-- −t 分界线 -->
+  <line x1="110" y1="187" x2="110" y2="202" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,3"/>
+  <!-- +t 分界线 -->
+  <line x1="370" y1="187" x2="370" y2="202" stroke="#e74c3c" stroke-width="2" stroke-dasharray="4,3"/>
+  <!-- 0 中心线 -->
+  <line x1="240" y1="43" x2="240" y2="202" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- 标注 -->
+  <text x="110" y="218" text-anchor="middle" font-size="12" font-weight="bold" fill="#e74c3c">−t</text>
+  <text x="240" y="218" text-anchor="middle" font-size="12" fill="#666">0</text>
+  <text x="370" y="218" text-anchor="middle" font-size="12" font-weight="bold" fill="#e74c3c">+t</text>
+  <text x="75" y="210" text-anchor="middle" font-size="10" fill="#e74c3c">左尾面积</text>
+  <text x="405" y="210" text-anchor="middle" font-size="10" fill="#e74c3c">右尾面积</text>
+  <!-- 底部说明 -->
+  <text x="240" y="245" text-anchor="middle" font-size="12" fill="#e74c3c">p 值 = 左尾面积 + 右尾面积</text>
+</svg>
 
 翻译成人话：如果 $H_0$ 为真（因子无效），t 统计量应该落在 0 附近。p 值告诉你，实际观测到的 t 值有多"极端"——p 值越小，说明在 $H_0$ 下出现这种结果的概率越低，拒绝 $H_0$ 的证据越强。
 

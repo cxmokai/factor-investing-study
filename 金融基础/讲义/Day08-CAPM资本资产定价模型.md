@@ -109,21 +109,44 @@ $$r_i - r_f = \alpha + \beta (r_m - r_f) + \varepsilon$$
 
 > **不需要记住回归的数学细节。** 今天只需知道：Beta 是从"资产收益率 vs 市场收益率"的散点图中，拟合出的那条直线的**斜率**。编程实战阶段会用 Python 实际计算。
 
-```
-资产超额收益 (r_i - r_f)
-  ^
-  |          *    *
-  |        *   *
-  |      *  *     *
-  |    *  *  *         ← 散点 = 每个月的数据
-  |  *  * *
-  | * *           斜率 = Beta
-  |* *  /
-  | * /
-  |  /
-  | /
-  +----------------------------> 市场超额收益 (r_m - r_f)
-```
+<svg width="480" height="270" viewBox="0 0 480 270" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="270" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Beta 回归散点图</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="440" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="35" stroke="#666" stroke-width="1.5"/>
+  <!-- 轴标签 -->
+  <text x="260" y="252" text-anchor="middle" font-size="11" fill="#666">市场超额收益 (r_m − r_f)</text>
+  <text x="240" y="265" text-anchor="middle" font-size="11" fill="#666"></text>
+  <text x="22" y="35" text-anchor="start" font-size="10" fill="#666">资产超额</text>
+  <text x="22" y="48" text-anchor="start" font-size="10" fill="#666">收益</text>
+  <text x="22" y="61" text-anchor="start" font-size="10" fill="#666">(r_i − r_f)</text>
+  <!-- 回归拟合线 -->
+  <line x1="90" y1="182" x2="410" y2="55" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- 散点（每个月的数据） -->
+  <circle cx="105" cy="178" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="125" cy="168" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="140" cy="175" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="160" cy="155" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="180" cy="148" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="200" cy="140" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="215" cy="145" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="235" cy="125" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="255" cy="130" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="275" cy="112" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="295" cy="118" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="315" cy="98" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="335" cy="92" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="360" cy="78" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="385" cy="68" r="3" fill="#4a90d9" opacity="0.5"/>
+  <circle cx="400" cy="62" r="3" fill="#4a90d9" opacity="0.5"/>
+  <!-- 斜率标注 -->
+  <text x="350" y="110" font-size="12" font-weight="bold" fill="#4a90d9">斜率 = β</text>
+  <!-- 散点说明 -->
+  <text x="350" y="230" font-size="10" fill="#666">每个点 = 一个月的数据</text>
+</svg>
 
 斜率 = Beta：
 - 斜率大（线很陡）→ Beta 高 → 市场动一下，资产动得更多
@@ -264,21 +287,41 @@ graph TD
 
 **证券市场线（Securities Market Line, SML）：把 CAPM 公式画成图——横轴是 Beta，纵轴是期望收益率。**
 
-```
-期望收益率 E(r)
-  ^
-  |                        *  SML
-  |                     *
-  |                  *     ← 斜率 = 市场风险溢价
-  |               *
-  |          M *           ← M = 市场组合（β=1, E(r)=10%）
-  |         *
-  |      *
-  |   *
-  | * r_f = 3%             ← 截距 = 无风险利率
-  +-----------------------------> Beta
-  0    0.5    1.0    1.5    2.0
-```
+<svg width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="260" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">证券市场线（SML）</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="440" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
+  <text x="440" y="220" text-anchor="end" font-size="12" fill="#666">Beta</text>
+  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">E(r)</text>
+  <!-- X 轴刻度 -->
+  <line x1="70" y1="200" x2="70" y2="204" stroke="#666"/>
+  <text x="70" y="218" text-anchor="middle" font-size="10" fill="#666">0</text>
+  <line x1="160" y1="200" x2="160" y2="204" stroke="#666"/>
+  <text x="160" y="218" text-anchor="middle" font-size="10" fill="#666">0.5</text>
+  <line x1="250" y1="200" x2="250" y2="204" stroke="#666"/>
+  <text x="250" y="218" text-anchor="middle" font-size="10" fill="#666">1.0</text>
+  <line x1="340" y1="200" x2="340" y2="204" stroke="#666"/>
+  <text x="340" y="218" text-anchor="middle" font-size="10" fill="#666">1.5</text>
+  <line x1="430" y1="200" x2="430" y2="204" stroke="#666"/>
+  <text x="430" y="218" text-anchor="middle" font-size="10" fill="#666">2.0</text>
+  <!-- SML 直线 -->
+  <line x1="70" y1="173" x2="430" y2="49" stroke="#4a90d9" stroke-width="2.5"/>
+  <text x="435" y="45" font-size="11" font-weight="bold" fill="#4a90d9">SML</text>
+  <!-- r_f 截距 -->
+  <circle cx="70" cy="173" r="4" fill="#4a90d9"/>
+  <text x="82" y="170" font-size="11" fill="#666">r_f = 3%</text>
+  <!-- M 市场组合 -->
+  <circle cx="250" cy="111" r="6" fill="#e74c3c"/>
+  <text x="260" y="105" font-size="11" font-weight="bold" fill="#e74c3c">M</text>
+  <text x="260" y="119" font-size="10" fill="#666">β=1, E(r)=10%</text>
+  <!-- 斜率标注 -->
+  <text x="370" y="90" font-size="10" fill="#666">斜率 = 市场风险溢价</text>
+  <text x="370" y="103" font-size="10" fill="#666">= E(r_m) − r_f = 7%</text>
+</svg>
 
 SML 的方程就是 CAPM：
 
@@ -328,18 +371,35 @@ $$\alpha_i = r_i - [r_f + \beta_i(r_m - r_f)]$$
 | $\alpha = 0$ | 实际收益**等于** CAPM 预测——刚好 | 落在 SML **上** |
 | $\alpha < 0$ | 实际收益**低于** CAPM 预测——赚少了 | 落在 SML **下方** |
 
-```
-期望收益率 E(r)
-  ^
-  |            A *  ← α > 0（在 SML 上方，实际收益 > CAPM 预测）
-  |               *  SML
-  |            *
-  |         *
-  |      *   * B   ← α < 0（在 SML 下方，实际收益 < CAPM 预测）
-  |   *
-  | * r_f
-  +-----------------------------> Beta
-```
+<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="250" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Alpha：SML 上方与下方</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="440" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
+  <text x="440" y="220" text-anchor="end" font-size="12" fill="#666">Beta</text>
+  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">E(r)</text>
+  <!-- SML 直线 -->
+  <line x1="70" y1="173" x2="430" y2="49" stroke="#4a90d9" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="435" y="45" font-size="11" fill="#4a90d9">SML</text>
+  <!-- r_f 截距 -->
+  <circle cx="70" cy="173" r="3" fill="#4a90d9"/>
+  <text x="82" y="178" font-size="10" fill="#666">r_f</text>
+  <!-- A 点：α > 0（在 SML 上方） -->
+  <circle cx="286" cy="72" r="6" fill="#e74c3c"/>
+  <text x="296" y="68" font-size="12" font-weight="bold" fill="#e74c3c">A</text>
+  <line x1="286" y1="80" x2="286" y2="96" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="296" y="95" font-size="10" fill="#e74c3c">α &gt; 0</text>
+  <text x="296" y="108" font-size="10" fill="#e74c3c">实际收益 &gt; CAPM 预测</text>
+  <!-- B 点：α < 0（在 SML 下方） -->
+  <circle cx="214" cy="155" r="6" fill="#999"/>
+  <text x="134" y="150" font-size="12" font-weight="bold" fill="#999">B</text>
+  <line x1="214" y1="148" x2="214" y2="128" stroke="#999" stroke-width="1.5" stroke-dasharray="2,2"/>
+  <text x="134" y="164" font-size="10" fill="#999">α &lt; 0</text>
+  <text x="134" y="177" font-size="10" fill="#999">实际收益 &lt; CAPM 预测</text>
+</svg>
 
 #### 7.2 Alpha 的经济含义
 

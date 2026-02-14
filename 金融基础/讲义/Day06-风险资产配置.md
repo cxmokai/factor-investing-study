@@ -317,22 +317,32 @@ $$\sigma_c = y \times \sigma_p$$
 
 把上面表格中的点连起来：
 
-```
-收益率 E(r)
-  ^
-  |                          * (y=1, 全仓股票)
-  |                        /    E(r)=10%, σ=20%
-  |                      /
-  |                    /
-  |                  * (y=0.6)
-  |                /    E(r)=7.2%, σ=12%
-  |              /
-  |            /
-  |          /
-  |    * (y=0, 全仓国债)
-  |    E(r)=3%, σ=0%
-  +-----------------------------> 风险 σ
-```
+<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="250" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">资本配置线（CAL）</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
+  <!-- 轴标签 -->
+  <text x="450" y="220" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
+  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
+  <!-- CAL 直线 -->
+  <line x1="70" y1="159" x2="387" y2="63" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- 点: y=0（全仓国债） -->
+  <circle cx="70" cy="159" r="5" fill="#4a90d9"/>
+  <text x="84" y="150" font-size="11" font-weight="bold" fill="#333">y=0, 全仓国债</text>
+  <text x="84" y="164" font-size="10" fill="#666">E(r)=3%, σ=0%</text>
+  <!-- 点: y=0.6 -->
+  <circle cx="260" cy="101" r="5" fill="#e74c3c"/>
+  <text x="274" y="94" font-size="11" font-weight="bold" fill="#e74c3c">y=0.6</text>
+  <text x="274" y="108" font-size="10" fill="#666">E(r)=7.2%, σ=12%</text>
+  <!-- 点: y=1（全仓股票） -->
+  <circle cx="387" cy="63" r="5" fill="#4a90d9"/>
+  <text x="295" y="50" font-size="11" font-weight="bold" fill="#333">y=1, 全仓股票</text>
+  <text x="295" y="64" font-size="10" fill="#666">E(r)=10%, σ=20%</text>
+</svg>
 
 **这条从无风险利率出发、向右上方延伸的直线，就是资本配置线（CAL）。**
 
@@ -371,19 +381,35 @@ graph TD
 | 沪深 300 指数 | 10% | 20% | 0.35 |
 | 某因子策略 | 12% | 15% | 0.60 |
 
-```
-收益率 E(r)
-  ^
-  |                     * 因子策略
-  |                   /    （夏普更高，CAL 更陡）
-  |                 / /  * 沪深 300
-  |               / /  /
-  |             / / /
-  |           / //
-  |         //
-  |    * R_f = 3%
-  +-----------------------------> 风险 σ
-```
+<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="250" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">不同风险资产的 CAL 对比</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
+  <!-- 轴标签 -->
+  <text x="450" y="220" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
+  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
+  <!-- CAL 1: 沪深300（夏普 0.35，斜率较缓） -->
+  <line x1="70" y1="165" x2="387" y2="82" stroke="#999" stroke-width="2" stroke-dasharray="6,3"/>
+  <!-- CAL 2: 因子策略（夏普 0.60，斜率更陡） -->
+  <line x1="70" y1="165" x2="308" y2="55" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- R_f 起点 -->
+  <circle cx="70" cy="165" r="5" fill="#4a90d9"/>
+  <text x="84" y="180" font-size="11" fill="#333" font-weight="bold">R_f = 3%</text>
+  <!-- 沪深300 终点 -->
+  <circle cx="387" cy="82" r="4" fill="#999"/>
+  <text x="395" y="78" font-size="11" fill="#999">沪深 300</text>
+  <text x="395" y="92" font-size="10" fill="#999">夏普 0.35</text>
+  <!-- 因子策略 终点 -->
+  <circle cx="308" cy="55" r="4" fill="#4a90d9"/>
+  <text x="316" y="48" font-size="11" fill="#4a90d9" font-weight="bold">因子策略</text>
+  <text x="316" y="62" font-size="10" fill="#4a90d9">夏普 0.60</text>
+  <!-- 斜率对比注释 -->
+  <text x="250" y="235" text-anchor="middle" font-size="11" fill="#666">↑ 夏普比率越高，CAL 越陡，投资"性价比"越好</text>
+</svg>
 
 **你会选择夏普比率更高的那条 CAL——因为在任何风险水平下，它都能给你更高的收益。**
 
@@ -468,18 +494,39 @@ graph LR
 
 把第一节的无差异曲线和第二节的 CAL 画在同一张图上：
 
-```
-收益率 E(r)
-  ^
-  |            / IC3    /
-  |          /        / CAL
-  |        / IC2    *  ← 切点（最优配置）
-  |      /        /
-  |    / IC1    /
-  |           /
-  |    * R_f
-  +-----------------------------> 风险 σ
-```
+<svg width="480" height="250" viewBox="0 0 480 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="250" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">无差异曲线与 CAL 的切点</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
+  <!-- 轴标签 -->
+  <text x="450" y="220" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
+  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
+  <!-- CAL 直线 -->
+  <line x1="70" y1="165" x2="420" y2="78" stroke="#4a90d9" stroke-width="2.5"/>
+  <text x="425" y="74" font-size="11" font-weight="bold" fill="#4a90d9">CAL</text>
+  <!-- IC1（效用较低） -->
+  <polyline points="70,171 105,170 139,167 173,162 208,156 243,147 277,137 312,124 346,110"
+    fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="352" y="114" font-size="11" fill="#999">IC1</text>
+  <!-- IC2（与 CAL 相切，最优） -->
+  <polyline points="70,147 105,146 139,143 173,138 208,132 221,129 243,123 277,113 312,100 346,86"
+    fill="none" stroke="#e74c3c" stroke-width="2"/>
+  <text x="352" y="90" font-size="11" font-weight="bold" fill="#e74c3c">IC2</text>
+  <!-- IC3（效用更高但不可达） -->
+  <polyline points="70,123 105,122 139,120 173,115 208,108 243,100 277,89 312,77 346,63"
+    fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="352" y="66" font-size="11" fill="#999">IC3</text>
+  <!-- 切点标注 -->
+  <circle cx="221" cy="129" r="6" fill="#e74c3c"/>
+  <text x="232" y="122" font-size="11" font-weight="bold" fill="#e74c3c">← 切点（最优配置）</text>
+  <!-- R_f 起点 -->
+  <circle cx="70" cy="165" r="4" fill="#4a90d9"/>
+  <text x="84" y="176" font-size="11" fill="#4a90d9">R_f</text>
+</svg>
 
 - 你想让无差异曲线尽量高（效用越大越好）
 - 但你只能选 CAL 上的点（受投资机会限制）
@@ -517,21 +564,39 @@ y = 150 / 100 = 1.5（150% 配置在风险资产）
 
 #### 7.2 杠杆在 CAL 上的位置
 
-```
-收益率 E(r)
-  ^
-  |                              * y=1.5（杠杆区）
-  |                            /
-  |                          /
-  |                    * y=1（全仓股票）
-  |                  /
-  |                /         ← 这条线延伸到 y=1 之后
-  |              /              就是"借钱投资"的区域
-  |            /
-  |    * R_f
-  +-----------------------------> 风险 σ
-          无杠杆区       杠杆区
-```
+<svg width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="260" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">CAL 的杠杆延伸</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="200" x2="450" y2="200" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="200" x2="70" y2="30" stroke="#666" stroke-width="1.5"/>
+  <!-- 轴标签 -->
+  <text x="450" y="220" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
+  <text x="30" y="30" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
+  <!-- CAL 无杠杆区（实线蓝色） -->
+  <line x1="70" y1="169" x2="287" y2="97" stroke="#4a90d9" stroke-width="2.5"/>
+  <!-- CAL 杠杆延伸区（实线红色） -->
+  <line x1="287" y1="97" x2="396" y2="61" stroke="#e74c3c" stroke-width="2.5"/>
+  <!-- 分界虚线 -->
+  <line x1="287" y1="90" x2="287" y2="210" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- R_f 点 -->
+  <circle cx="70" cy="169" r="5" fill="#4a90d9"/>
+  <text x="84" y="182" font-size="11" fill="#333" font-weight="bold">R_f</text>
+  <!-- y=1 全仓股票 -->
+  <circle cx="287" cy="97" r="5" fill="#4a90d9"/>
+  <text x="220" y="88" font-size="11" fill="#333" font-weight="bold">y=1（全仓股票）</text>
+  <!-- y=1.5 杠杆 -->
+  <circle cx="396" cy="61" r="5" fill="#e74c3c"/>
+  <text x="320" y="52" font-size="11" fill="#e74c3c" font-weight="bold">y=1.5（杠杆）</text>
+  <!-- 区域标注 -->
+  <text x="178" y="235" text-anchor="middle" font-size="12" fill="#4a90d9">无杠杆区</text>
+  <text x="342" y="235" text-anchor="middle" font-size="12" fill="#e74c3c">杠杆区</text>
+  <!-- 补充说明 -->
+  <text x="370" y="155" text-anchor="middle" font-size="10" fill="#999">← 延伸到 y=1 之后</text>
+  <text x="370" y="168" text-anchor="middle" font-size="10" fill="#999">就是"借钱投资"区域</text>
+</svg>
 
 **CAL 在 $y=1$ 之后继续延伸——那部分就是杠杆区域。** 收益更高，但风险也成比例增大。
 

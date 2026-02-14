@@ -52,25 +52,57 @@ $$R_i - R_f = \alpha + \beta(R_m - R_f) + \varepsilon$$
 
 想象你有 5 个月的数据，横轴是市场超额收益，纵轴是某只股票的超额收益：
 
-```
-  Y (股票超额收益 %)
-  |
- 5|                 *
-  |            /
- 4|          /
-  |        /
- 3|    * /
-  |    /
- 2|  /         *
-  | /
- 1|/    *
-  |
- 0+--+--+--+--+--→ X (市场超额收益 %)
- -1  0  1  2  3
-  |
--1| *
-  |
-```
+<svg width="480" height="280" viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="280" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">OLS 回归散点图</text>
+  <!-- 坐标轴 -->
+  <line x1="100" y1="220" x2="430" y2="220" stroke="#666" stroke-width="1.5"/>
+  <line x1="100" y1="220" x2="100" y2="35" stroke="#666" stroke-width="1.5"/>
+  <!-- 轴标签 -->
+  <text x="260" y="265" text-anchor="middle" font-size="11" fill="#666">X（市场超额收益 %）</text>
+  <text x="35" y="38" text-anchor="start" font-size="10" fill="#666">Y（股票</text>
+  <text x="35" y="51" text-anchor="start" font-size="10" fill="#666">超额收益%）</text>
+  <!-- X 轴刻度 -->
+  <line x1="148" y1="220" x2="148" y2="224" stroke="#666"/>
+  <text x="148" y="236" text-anchor="middle" font-size="10" fill="#666">-1</text>
+  <line x1="196" y1="220" x2="196" y2="224" stroke="#666"/>
+  <text x="196" y="236" text-anchor="middle" font-size="10" fill="#666">0</text>
+  <line x1="244" y1="220" x2="244" y2="224" stroke="#666"/>
+  <text x="244" y="236" text-anchor="middle" font-size="10" fill="#666">1</text>
+  <line x1="292" y1="220" x2="292" y2="224" stroke="#666"/>
+  <text x="292" y="236" text-anchor="middle" font-size="10" fill="#666">2</text>
+  <line x1="340" y1="220" x2="340" y2="224" stroke="#666"/>
+  <text x="340" y="236" text-anchor="middle" font-size="10" fill="#666">3</text>
+  <line x1="388" y1="220" x2="388" y2="224" stroke="#666"/>
+  <text x="388" y="236" text-anchor="middle" font-size="10" fill="#666">4</text>
+  <!-- Y 轴刻度 -->
+  <line x1="96" y1="195" x2="100" y2="195" stroke="#666"/>
+  <text x="92" y="199" text-anchor="end" font-size="10" fill="#666">-1</text>
+  <line x1="96" y1="170" x2="100" y2="170" stroke="#666"/>
+  <text x="92" y="174" text-anchor="end" font-size="10" fill="#666">0</text>
+  <line x1="96" y1="145" x2="100" y2="145" stroke="#666"/>
+  <text x="92" y="149" text-anchor="end" font-size="10" fill="#666">1</text>
+  <line x1="96" y1="120" x2="100" y2="120" stroke="#666"/>
+  <text x="92" y="124" text-anchor="end" font-size="10" fill="#666">2</text>
+  <line x1="96" y1="95" x2="100" y2="95" stroke="#666"/>
+  <text x="92" y="99" text-anchor="end" font-size="10" fill="#666">3</text>
+  <line x1="96" y1="70" x2="100" y2="70" stroke="#666"/>
+  <text x="92" y="74" text-anchor="end" font-size="10" fill="#666">4</text>
+  <line x1="96" y1="45" x2="100" y2="45" stroke="#666"/>
+  <text x="92" y="49" text-anchor="end" font-size="10" fill="#666">5</text>
+  <!-- 回归拟合线 Y ≈ 0.05 + 1.08X -->
+  <line x1="122" y1="210" x2="405" y2="52" stroke="#4a90d9" stroke-width="2" stroke-dasharray="6,3"/>
+  <!-- 散点数据 -->
+  <circle cx="148" cy="195" r="5" fill="#e74c3c"/>
+  <circle cx="244" cy="145" r="5" fill="#e74c3c"/>
+  <circle cx="292" cy="95" r="5" fill="#e74c3c"/>
+  <circle cx="340" cy="120" r="5" fill="#e74c3c"/>
+  <circle cx="388" cy="45" r="5" fill="#e74c3c"/>
+  <!-- 斜率标注 -->
+  <text x="380" y="95" font-size="12" font-weight="bold" fill="#4a90d9">斜率 = β</text>
+</svg>
 
 **几何直觉：** OLS 要做的，就是找到一条直线 $Y = a + bX$，使得所有数据点到这条直线的**竖直距离的平方和**最小。不是垂直距离，是竖直距离——因为我们关心的是预测 Y 的误差。
 

@@ -53,20 +53,36 @@ Day 17-18 你一直在用时间序列——60 个月的基金收益率、60 个�
 
 **非平稳序列**有趋势（均值随时间变化）或波动幅度在膨胀/收缩。
 
-```
-平稳序列（如收益率）：              非平稳序列（如股价）：
-
-  r                                  P
-  |                                  |                *
-  |  *       *                       |             *
-  |    *       *                     |          *
-μ ----+---*------+--→ t              |       *
-  |      *                           |    *  *
-  |  *                               | *
-  +----------→ t                     +----------→ t
-  围绕均值 μ 上下波动                 有明显的上升趋势
-  波动幅度大致恒定                    均值随时间不断增大
-```
+<svg width="480" height="220" viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="220" fill="#fafafa" rx="8"/>
+  <text x="240" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">平稳序列 vs 非平稳序列</text>
+  <!-- 左面板：平稳序列 -->
+  <text x="130" y="38" text-anchor="middle" font-size="11" font-weight="bold" fill="#4a90d9">平稳（如收益率）</text>
+  <line x1="40" y1="170" x2="220" y2="170" stroke="#666" stroke-width="1"/>
+  <line x1="40" y1="170" x2="40" y2="42" stroke="#666" stroke-width="1"/>
+  <text x="40" y="39" font-size="10" fill="#666">r</text>
+  <text x="222" y="182" font-size="10" fill="#666">t</text>
+  <!-- μ 均值线 -->
+  <line x1="40" y1="105" x2="220" y2="105" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="32" y="109" text-anchor="end" font-size="10" fill="#e74c3c">μ</text>
+  <!-- 平稳序列（围绕 μ 上下波动） -->
+  <polyline points="48,105 56,78 66,122 76,72 86,128 96,82 108,118 118,70 128,126 138,85 150,115 160,78 170,120 180,90 192,108 202,80 212,105"
+    fill="none" stroke="#4a90d9" stroke-width="2"/>
+  <text x="130" y="190" text-anchor="middle" font-size="10" fill="#666">围绕均值 μ 上下波动</text>
+  <text x="130" y="203" text-anchor="middle" font-size="10" fill="#666">波动幅度大致恒定</text>
+  <!-- 右面板：非平稳序列 -->
+  <text x="360" y="38" text-anchor="middle" font-size="11" font-weight="bold" fill="#e74c3c">非平稳（如股价）</text>
+  <line x1="270" y1="170" x2="450" y2="170" stroke="#666" stroke-width="1"/>
+  <line x1="270" y1="170" x2="270" y2="42" stroke="#666" stroke-width="1"/>
+  <text x="270" y="39" font-size="10" fill="#666">P</text>
+  <text x="452" y="182" font-size="10" fill="#666">t</text>
+  <!-- 上升趋势序列 -->
+  <polyline points="280,158 290,155 300,148 310,152 320,140 330,135 340,138 350,125 360,118 370,112 380,105 390,98 400,88 410,82 420,72 430,65 440,55"
+    fill="none" stroke="#e74c3c" stroke-width="2"/>
+  <text x="360" y="190" text-anchor="middle" font-size="10" fill="#666">有明显的上升趋势</text>
+  <text x="360" y="203" text-anchor="middle" font-size="10" fill="#666">均值随时间不断增大</text>
+</svg>
 
 #### 2.3 金融例子：股价 vs 收益率
 
@@ -359,27 +375,46 @@ $$ACF(k) = \frac{\sum_{t=k+1}^{T}(r_t - \bar{r})(r_{t-k} - \bar{r})}{\sum_{t=1}^
 
 实际中不手算 ACF，而是看 ACF 图：
 
-```
-ACF 图示意（柱状图）：
-
-  ACF
-  1.0|
-     |
-  0.5|
-     | ██
-  0.3|─██──────────────── 置信区间上界（虚线）
-     | ██
-     | ██  ██
-  0.0|─██──██──██──██────
-     |         ██
- -0.3|────────────██───── 置信区间下界（虚线）
-     |            ██
- -0.5|
-     +──1──2──3──4──5──→ 滞后期 k
-
-  超出虚线 = 该滞后期的自相关显著不为零
-  在虚线内 = 自相关不显著
-```
+<svg width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="260" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">ACF 图示意</text>
+  <!-- 坐标轴 -->
+  <line x1="80" y1="200" x2="430" y2="200" stroke="#666" stroke-width="1"/>
+  <line x1="80" y1="200" x2="80" y2="35" stroke="#666" stroke-width="1"/>
+  <text x="430" y="218" text-anchor="end" font-size="12" fill="#666">滞后期 k</text>
+  <text x="40" y="38" text-anchor="start" font-size="12" fill="#666">ACF</text>
+  <!-- 零基线 -->
+  <line x1="80" y1="147" x2="420" y2="147" stroke="#666" stroke-width="1"/>
+  <!-- 置信区间虚线 -->
+  <line x1="80" y1="115" x2="420" y2="115" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="80" y1="179" x2="420" y2="179" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- Y 轴刻度 -->
+  <text x="72" y="44" text-anchor="end" font-size="10" fill="#666">1.0</text>
+  <text x="72" y="97" text-anchor="end" font-size="10" fill="#666">0.5</text>
+  <text x="72" y="119" text-anchor="end" font-size="10" fill="#e74c3c">0.3</text>
+  <text x="72" y="151" text-anchor="end" font-size="10" fill="#666">0.0</text>
+  <text x="72" y="183" text-anchor="end" font-size="10" fill="#e74c3c">−0.3</text>
+  <!-- Lag 1: ACF ≈ 0.4（显著，超出 CI） -->
+  <rect x="125" y="104" width="30" height="43" fill="#4a90d9" opacity="0.8"/>
+  <!-- Lag 2: ACF ≈ 0.15（在 CI 内） -->
+  <rect x="185" y="131" width="30" height="16" fill="#4a90d9" opacity="0.5"/>
+  <!-- Lag 3: ACF ≈ 0.05（在 CI 内） -->
+  <rect x="245" y="141" width="30" height="6" fill="#4a90d9" opacity="0.5"/>
+  <!-- Lag 4: ACF ≈ −0.05（在 CI 内） -->
+  <rect x="305" y="147" width="30" height="5" fill="#4a90d9" opacity="0.5"/>
+  <!-- Lag 5: ACF ≈ −0.4（显著，超出 CI） -->
+  <rect x="365" y="147" width="30" height="42" fill="#e74c3c" opacity="0.7"/>
+  <!-- X 轴刻度 -->
+  <text x="140" y="215" text-anchor="middle" font-size="10" fill="#666">1</text>
+  <text x="200" y="215" text-anchor="middle" font-size="10" fill="#666">2</text>
+  <text x="260" y="215" text-anchor="middle" font-size="10" fill="#666">3</text>
+  <text x="320" y="215" text-anchor="middle" font-size="10" fill="#666">4</text>
+  <text x="380" y="215" text-anchor="middle" font-size="10" fill="#666">5</text>
+  <!-- 说明 -->
+  <text x="240" y="242" text-anchor="middle" font-size="10" fill="#666">超出虚线 = 自相关显著 ｜ 在虚线内 = 不显著</text>
+</svg>
 
 **虚线 = 95% 置信区间**（约 $\pm 1.96 / \sqrt{T}$）。柱子超出虚线 → 该滞后期的自相关显著；在虚线内 → 不显著。
 

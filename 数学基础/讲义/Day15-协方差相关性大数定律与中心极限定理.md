@@ -69,18 +69,50 @@ $$\text{Cov}(X, Y) = E[XY] - E[X] \cdot E[Y]$$
 
 把每一对 $(X, Y)$ 画在散点图上，协方差的符号对应散点云的倾斜方向：
 
-```
-正协方差（同涨同跌）：      负协方差（一涨一跌）：      零协方差（无线性关系）：
-
-  Y                           Y                           Y
-  ^     *  *                  ^  *                        ^     *
-  |   *  *                    |   *  *                    |  *     *
-  |  * *                      |     * *                   | *  *  *  *
-  | * *                       |      *  *                 |  *     *
-  |*                          |        *  *               |     *
-  +---------> X               +-----------> X             +---------> X
-  散点云从左下到右上          散点云从左上到右下          散点云没有明显倾斜
-```
+<svg width="480" height="220" viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="220" fill="#fafafa" rx="8"/>
+  <text x="240" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">协方差的三种模式</text>
+  <!-- 正协方差面板 -->
+  <line x1="40" y1="165" x2="140" y2="165" stroke="#666" stroke-width="1"/>
+  <line x1="40" y1="165" x2="40" y2="45" stroke="#666" stroke-width="1"/>
+  <text x="40" y="40" font-size="10" fill="#666">Y</text>
+  <text x="142" y="178" font-size="10" fill="#666">X</text>
+  <circle cx="52" cy="155" r="2.5" fill="#4a90d9"/><circle cx="58" cy="148" r="2.5" fill="#4a90d9"/>
+  <circle cx="68" cy="140" r="2.5" fill="#4a90d9"/><circle cx="72" cy="132" r="2.5" fill="#4a90d9"/>
+  <circle cx="82" cy="120" r="2.5" fill="#4a90d9"/><circle cx="90" cy="108" r="2.5" fill="#4a90d9"/>
+  <circle cx="98" cy="98" r="2.5" fill="#4a90d9"/><circle cx="108" cy="85" r="2.5" fill="#4a90d9"/>
+  <circle cx="118" cy="72" r="2.5" fill="#4a90d9"/><circle cx="130" cy="58" r="2.5" fill="#4a90d9"/>
+  <circle cx="75" cy="128" r="2.5" fill="#4a90d9"/><circle cx="115" cy="80" r="2.5" fill="#4a90d9"/>
+  <text x="90" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#4a90d9">正协方差</text>
+  <text x="90" y="204" text-anchor="middle" font-size="10" fill="#666">左下→右上</text>
+  <!-- 负协方差面板 -->
+  <line x1="185" y1="165" x2="285" y2="165" stroke="#666" stroke-width="1"/>
+  <line x1="185" y1="165" x2="185" y2="45" stroke="#666" stroke-width="1"/>
+  <text x="185" y="40" font-size="10" fill="#666">Y</text>
+  <text x="287" y="178" font-size="10" fill="#666">X</text>
+  <circle cx="198" cy="58" r="2.5" fill="#e74c3c"/><circle cx="205" cy="70" r="2.5" fill="#e74c3c"/>
+  <circle cx="215" cy="82" r="2.5" fill="#e74c3c"/><circle cx="225" cy="95" r="2.5" fill="#e74c3c"/>
+  <circle cx="235" cy="108" r="2.5" fill="#e74c3c"/><circle cx="245" cy="118" r="2.5" fill="#e74c3c"/>
+  <circle cx="255" cy="128" r="2.5" fill="#e74c3c"/><circle cx="262" cy="138" r="2.5" fill="#e74c3c"/>
+  <circle cx="270" cy="148" r="2.5" fill="#e74c3c"/><circle cx="278" cy="158" r="2.5" fill="#e74c3c"/>
+  <circle cx="210" cy="68" r="2.5" fill="#e74c3c"/><circle cx="248" cy="122" r="2.5" fill="#e74c3c"/>
+  <text x="235" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#e74c3c">负协方差</text>
+  <text x="235" y="204" text-anchor="middle" font-size="10" fill="#666">左上→右下</text>
+  <!-- 零协方差面板 -->
+  <line x1="330" y1="165" x2="430" y2="165" stroke="#666" stroke-width="1"/>
+  <line x1="330" y1="165" x2="330" y2="45" stroke="#666" stroke-width="1"/>
+  <text x="330" y="40" font-size="10" fill="#666">Y</text>
+  <text x="432" y="178" font-size="10" fill="#666">X</text>
+  <circle cx="345" cy="75" r="2.5" fill="#999"/><circle cx="355" cy="135" r="2.5" fill="#999"/>
+  <circle cx="365" cy="58" r="2.5" fill="#999"/><circle cx="375" cy="112" r="2.5" fill="#999"/>
+  <circle cx="385" cy="152" r="2.5" fill="#999"/><circle cx="348" cy="145" r="2.5" fill="#999"/>
+  <circle cx="395" cy="68" r="2.5" fill="#999"/><circle cx="405" cy="125" r="2.5" fill="#999"/>
+  <circle cx="415" cy="88" r="2.5" fill="#999"/><circle cx="425" cy="140" r="2.5" fill="#999"/>
+  <circle cx="362" cy="100" r="2.5" fill="#999"/><circle cx="398" cy="55" r="2.5" fill="#999"/>
+  <text x="380" y="190" text-anchor="middle" font-size="11" font-weight="bold" fill="#999">零协方差</text>
+  <text x="380" y="204" text-anchor="middle" font-size="10" fill="#666">无明显倾斜</text>
+</svg>
 
 > **理解即可。** 协方差衡量的是散点云的"倾斜方向"和"紧密程度"。但它的数值大小依赖于 $X$、$Y$ 的单位和幅度，不方便比较——这个问题 §2 的相关系数会解决。
 
