@@ -200,17 +200,34 @@ $$U = E(r) - \frac{1}{2} A \sigma^2$$
 
 在"风险（横轴）- 收益（纵轴）"的图上，无差异曲线是一组**向右上方倾斜的曲线**：
 
-```
-收益率 E(r)
-  ^
-  |          / IC3（效用更高）
-  |        /
-  |      / IC2
-  |    /
-  |  / IC1（效用较低）
-  |/
-  +--------------------> 风险 σ
-```
+<svg width="480" height="260" viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="480" height="260" fill="#fafafa" rx="8"/>
+  <!-- 标题 -->
+  <text x="240" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">无差异曲线（Indifference Curves）</text>
+  <!-- 坐标轴 -->
+  <line x1="70" y1="220" x2="450" y2="220" stroke="#666" stroke-width="1.5"/>
+  <line x1="70" y1="220" x2="70" y2="35" stroke="#666" stroke-width="1.5"/>
+  <!-- 轴标签 -->
+  <text x="450" y="240" text-anchor="end" font-size="12" fill="#666">风险 σ</text>
+  <text x="30" y="40" text-anchor="start" font-size="12" fill="#666">收益率 E(r)</text>
+  <!-- IC1（效用较低） -->
+  <path d="M85,210 Q180,140 420,120" fill="none" stroke="#999" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="425" y="117" font-size="11" fill="#999">IC1（效用较低）</text>
+  <!-- IC2 -->
+  <path d="M85,170 Q180,100 420,80" fill="none" stroke="#4a90d9" stroke-width="2.5"/>
+  <text x="425" y="77" font-size="11" font-weight="bold" fill="#4a90d9">IC2</text>
+  <!-- IC2 上的两个等效用点 -->
+  <circle cx="145" cy="147" r="4" fill="#e74c3c"/>
+  <text x="120" y="140" font-size="10" fill="#e74c3c">A</text>
+  <circle cx="340" cy="90" r="4" fill="#e74c3c"/>
+  <text x="346" y="87" font-size="10" fill="#e74c3c">B</text>
+  <!-- IC3（效用更高） -->
+  <path d="M85,125 Q180,58 420,40" fill="none" stroke="#27ae60" stroke-width="2"/>
+  <text x="425" y="37" font-size="11" fill="#27ae60">IC3（效用更高）</text>
+  <!-- 箭头：效用递增方向 -->
+  <text x="100" y="92" font-size="11" fill="#333">↑ 效用递增</text>
+</svg>
 
 **每条曲线上所有点的效用值 $U$ 相同。** 比如 IC2 上有两个点：
 - 点 A：收益 8%，波动 10%
